@@ -2,7 +2,9 @@ import React from "react";
 import BookCard from "./BookCard";
 
 const getBooks = async () => {
-  const response = await fetch("http://localhost:3000/booksData.json");
+  const response = await fetch(
+    `${process.env.NEXT_SERVER_BASE_URL}/booksData.json`,
+  );
   const data = await response.json();
   return data;
 };
